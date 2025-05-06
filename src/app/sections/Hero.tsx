@@ -24,7 +24,7 @@ const Hero = () => {
                         />
                     </div>
                     <div className="absolute top-0 transform -translate-x-1/2 -translate-y-full bg-white shadow px-3 py-1 text-sm rounded-full text-gray-800">
-                        Hi, I'm Karen 👋
+                        Hi, I&apos;m Karen 👋
                     </div>
                 </div>
 
