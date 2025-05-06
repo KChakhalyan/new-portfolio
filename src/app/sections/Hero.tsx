@@ -1,40 +1,49 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Hero = () => {
     return (
-        <section
-            id="hero"
-            className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white"
-        >
-            <motion.h1
-                className="text-5xl md:text-7xl font-bold font-serif mb-4 "
-                initial={{ opacity: 0, y: 30 }}
+        <section className="min-h-screen flex items-center justify-center bg-[#f5f6fa] px-4">
+            <motion.div
+                className="w-full max-w-2xl bg-white rounded-[2rem] shadow-xl text-center p-10 relative"
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                Hi, I’m Karen
-            </motion.h1>
+                {/* Avatar + Greeting Bubble */}
+                <div className="flex justify-center mb-6 relative">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md">
+                        <Image
+                            src="/images/avatar.jpeg"
+                            alt="Avatar"
+                            width={80}
+                            height={80}
+                            className="object-cover w-full h-full"
+                        />
+                    </div>
+                    <div className="absolute top-0 transform -translate-x-1/2 -translate-y-full bg-white shadow px-3 py-1 text-sm rounded-full text-gray-800">
+                        Hi, I'm Karen 👋
+                    </div>
+                </div>
 
-            <motion.p
-                className="text-lg md:text-2xl text-gray-600 mb-6 max-w-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-            >
-                I design clean user interfaces for web and mobile. Portfolio & product designer.
-            </motion.p>
+                {/* Title */}
+                <h1 className="text-3xl md:text-4xl font-serif font-semibold text-gray-800 leading-snug">
+                    Building digital<br />
+                    products and effective<br />
+                    solutions
+                </h1>
 
-            <motion.a
-                href="#projects"
-                className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-            >
-                View Projects
-            </motion.a>
+                {/* Button */}
+                <motion.a
+                    href="#contact"
+                    className="mt-8 inline-block bg-lime-400 hover:bg-lime-500 text-black px-6 py-3 rounded-full font-medium shadow-md transition-all duration-200"
+                    whileHover={{ y: -2 }}
+                >
+                    Contact me ↗
+                </motion.a>
+            </motion.div>
         </section>
     );
 };
