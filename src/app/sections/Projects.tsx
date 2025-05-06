@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const projects = [
     {
         title: 'Yoga Bliss Landing Page',
-        image: '/image/1.png',
+        image: '/images/1.png',
         link: 'https://yoga-bliss-hazel.vercel.app/en',
         description: 'Multilingual landing page with contact form and animations.',
     },
@@ -44,9 +45,11 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img
+                        <Image
                             src={project.image}
                             alt={project.title}
+                            width={500}
+                            height={300}
                             className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="p-4">
